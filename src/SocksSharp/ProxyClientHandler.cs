@@ -53,7 +53,7 @@ namespace SocksSharp
         /// Gets a value that indicates whether the handler supports 
         /// configuration settings for the <see cref="AllowAutoRedirect"/>
         /// </summary>
-        public bool SupportsRedirectConfiguration => true;
+        public static bool SupportsRedirectConfiguration => true;
 
         /// <summary>
         /// Gets the type of decompression method used by the handler for automatic 
@@ -135,7 +135,7 @@ namespace SocksSharp
                 {
                     request.RequestUri = responseMessage.Headers.Location;
 
-                    return await SendAsync(request, cancellationToken);
+                    return await SendAsync(request, cancellationToken).ConfigureAwait(false);
                 }
 
                 return responseMessage;
