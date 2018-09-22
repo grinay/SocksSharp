@@ -53,7 +53,7 @@ namespace SocksSharp
         /// Gets a value that indicates whether the handler supports 
         /// configuration settings for the <see cref="AllowAutoRedirect"/>
         /// </summary>
-        public static bool SupportsRedirectConfiguration => true;
+        public bool SupportsRedirectConfiguration => true;
 
         /// <summary>
         /// Gets the type of decompression method used by the handler for automatic 
